@@ -35,8 +35,8 @@ const CustomCard = ({ data }: any) => (
       }}
     >
       <Grid.Container>
-        {data.list.map((x: String) => (
-          <Grid css={{ p: '5px' }}><Badge color='warning' >{x}</Badge></Grid>
+        {data.list.map((x: String,index:any) => (
+          <Grid css={{ p: '5px' }} key={index}><Badge>{x}</Badge></Grid>
         ))}
       </Grid.Container>
 

@@ -70,8 +70,8 @@ const Home: NextPage = () => {
   return (
     <div>
       <Grid.Container gap={2} justify="center">
-        {stats.map(x => (
-          <Grid>
+        {stats.map((x,index) => (
+          <Grid key={index}>
             <CustomCard data={x} />
           </Grid>
         ))}

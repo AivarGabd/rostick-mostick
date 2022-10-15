@@ -29,8 +29,8 @@ export default function CustomNavbar() {
                 variant="highlight-rounded"
             >
           
-                {collapseItems.map(x=>(
-                    <Navbar.Link href="#">{x}</Navbar.Link>
+                {collapseItems.map((x,index)=>(
+                    <Navbar.Link href="#" key={index}>{x}</Navbar.Link>
                 ))}
             </Navbar.Content>
             <Navbar.Content
