@@ -49,8 +49,6 @@ export default function CustomNavbar() {
                 {collapseItems.map((item, index) => (
                     <Navbar.CollapseItem
                         key={item}
-                     
-                       
                     >
                         <Link
                             color="inherit"
