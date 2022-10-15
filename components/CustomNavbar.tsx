@@ -1,4 +1,5 @@
 import { Button, Dropdown, Link, Navbar, Text } from "@nextui-org/react";
+import { AcmeLogo } from "./AcmeLogo";
 
 export default function CustomNavbar() {
     const collapseItems = [
@@ -18,8 +19,8 @@ export default function CustomNavbar() {
                 }}
             >
 
-                <Text b color="inherit" hideIn="xs">
-                    Игорь & Компания
+                <Text b color="inherit">
+                    Игорь&Компания
                 </Text>
             </Navbar.Brand>
             <Navbar.Content
@@ -28,8 +29,7 @@ export default function CustomNavbar() {
                 hideIn="xs"
                 variant="highlight-rounded"
             >
-          
-                {collapseItems.map((x,index)=>(
+                {collapseItems.map((x, index) => (
                     <Navbar.Link href="#" key={index}>{x}</Navbar.Link>
                 ))}
             </Navbar.Content>

@@ -10,6 +10,7 @@ const Home: NextPage = () => {
 
   const stats = [
     {
+      valueColor:'whitesmoke',
       value: 'ДТ',
       icon: <FaFire size={45} />,
       description: 'Оптовые поставки дизельного топлива от ведущих российских производителей',
@@ -17,6 +18,7 @@ const Home: NextPage = () => {
       list: ['ДТ Летнее', 'ДТ Зимнее', 'ДТ Арктическое']
     },
     {
+      valueColor:'whitesmoke',
       value: 'СУГ',
       icon: <FaFire size={45} />,
       description: 'Сжижженый Углеводородный газ',
@@ -24,6 +26,7 @@ const Home: NextPage = () => {
       list: ['Пропан', 'Пропан-Бутан', 'Бутан']
     },
     {
+      valueColor:'black',
       value: 'Автобензин',
       icon: <RiGasStationFill size={45} />,
       description: 'Оптовые поставки от ведущих производителей',
@@ -31,6 +34,7 @@ const Home: NextPage = () => {
       list: ['АИ-92', 'АИ-95', 'АИ-98', 'АИ-100']
     },
     {
+      valueColor:'whitesmoke',
       value: 'Авиационное топливо',
       icon: <GiCommercialAirplane size={45} />,
       description: 'Оптовые поставки авиационного топлива ТС и РТ от крупнейших НПЗ.',
@@ -38,6 +42,7 @@ const Home: NextPage = () => {
       list: ['TC-1', 'PT', 'AVGAS']
     },
     {
+      valueColor:'whitesmoke',
       value: 'Масла',
       icon: <GiGears size={45} />,
       description: 'Смазочные масла всех видов - в цистернах и бочках',
@@ -45,6 +50,7 @@ const Home: NextPage = () => {
       list: []
     },
     {
+      valueColor:'whitesmoke',
       value: 'Полимеры',
       icon: <BiNetworkChart size={45} />,
       description: 'Вспенивающийся полистирол, ПВД',
@@ -52,6 +58,7 @@ const Home: NextPage = () => {
       list: ['ПСВ', 'ПВД']
     },
     {
+      valueColor:'whitesmoke',
       value: 'Битум',
       icon: <FaRoad size={45} />,
       description: 'Строительный и дорожный с доставкой',
@@ -59,6 +66,7 @@ const Home: NextPage = () => {
       list: ['Битум дорожный', 'Битум строительный']
     },
     {
+      valueColor:'whitesmoke',
       value: 'Мазут',
       icon: <GiOilDrum size={45} />,
       description: 'Топочный мазут напрямую с заводов производителей',

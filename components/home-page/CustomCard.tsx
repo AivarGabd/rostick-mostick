@@ -10,20 +10,24 @@ const CustomCard = ({ data }: any) => (
         <Text size={13} b color="whitesmoke">
           {data.description}
         </Text>
-        <Text h2 color="white">
+        <Text h2 color="whitesmoke">
           {data.value}
         </Text>
       </Col>
     </Card.Header>
 
-    <Card.Image
-
-      src={data.src}
-      objectFit="cover"
-      width="100%"
-      height={450}
-      alt={data.description}
-    />
+    <div style={{
+      //filter: 'blur(2px)'
+    }}>
+      <Card.Image
+        showSkeleton
+        src={data.src}
+        objectFit="cover"
+        width="100%"
+        height={450}
+        alt={data.description}
+      />
+    </div>
     <Card.Footer
       isBlurred
       css={{
@@ -35,7 +39,7 @@ const CustomCard = ({ data }: any) => (
       }}
     >
       <Grid.Container>
-        {data.list.map((x: String,index:any) => (
+        {data.list.map((x: String, index: any) => (
           <Grid css={{ p: '5px' }} key={index}><Badge>{x}</Badge></Grid>
         ))}
       </Grid.Container>
