@@ -15,7 +15,7 @@ export default function CustomNavbar() {
     ];
 
     return (
-        <Navbar isBordered variant="sticky">
+        <Navbar variant="floating">
             <Navbar.Toggle showIn="xs" />
             <Navbar.Brand
                 css={{
