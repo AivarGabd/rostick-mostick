@@ -3,28 +3,35 @@ import { Badge, Button, Card, Col, Grid, Row, Text } from "@nextui-org/react";
 const CustomCard = ({ data }: any) => (
   <Card isPressable isHoverable css={{
     mw: '300px',
-    minHeight: "450px"
+
   }}>
-    <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
-      <Col>
-        <Text size={13} b color="whitesmoke">
-          {data.description}
-        </Text>
-        <Text h2 color="whitesmoke">
-          {data.value}
-        </Text>
-      </Col>
+    <Card.Header css={{
+      position: "absolute",
+      zIndex: 1,
+      top: 0,
+      mt: '-5px',
+      bgBlur: "#0f111466",
+      pb:'-10px'
+    }}>
+
+
+      <Text h3 color='whitesmoke' css={{
+        marginBlockEnd:"0 "
+      }}>
+        {data.value}
+      </Text>
+
     </Card.Header>
 
     <div style={{
-      //filter: 'blur(2px)'
+      //filter: 'blur(1px)'
     }}>
       <Card.Image
         showSkeleton
         src={data.src}
         objectFit="cover"
         width="100%"
-        height={450}
+        height={500}
         alt={data.description}
       />
     </div>
@@ -38,11 +45,17 @@ const CustomCard = ({ data }: any) => (
         zIndex: 1,
       }}
     >
-      <Grid.Container>
-        {data.list.map((x: String, index: any) => (
-          <Grid css={{ p: '5px' }} key={index}><Badge>{x}</Badge></Grid>
-        ))}
-      </Grid.Container>
+      <Col>
+        <Text size={13} b color="whitesmoke">
+          {data.description}
+        </Text>
+        <Grid.Container>
+          {data.list.map((x: String, index: any) => (
+            <Grid css={{ p: '5px' }} key={index}><Badge>{x}</Badge></Grid>
+          ))}
+        </Grid.Container>
+      </Col>
+
 
     </Card.Footer>
   </Card>

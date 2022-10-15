@@ -26,7 +26,7 @@ const Home: NextPage = () => {
       list: ['Пропан', 'Пропан-Бутан', 'Бутан']
     },
     {
-      valueColor:'black',
+      valueColor:'whitesmoke',
       value: 'Автобензин',
       icon: <RiGasStationFill size={45} />,
       description: 'Оптовые поставки от ведущих производителей',

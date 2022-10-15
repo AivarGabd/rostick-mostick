@@ -1,5 +1,4 @@
 import { Button, Dropdown, Link, Navbar, Text } from "@nextui-org/react";
-import { AcmeLogo } from "./AcmeLogo";
 
 export default function CustomNavbar() {
     const collapseItems = [
