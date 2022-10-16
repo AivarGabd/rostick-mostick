@@ -2,9 +2,18 @@ import { Button, Dropdown, Link, Navbar, Text } from "@nextui-org/react";
 
 export default function CustomNavbar() {
     const collapseItems = [
-        "Главная",
-        "Услуги",
-        "Контакты"
+        {
+            name: 'Главная',
+            href: '/'
+        },
+        {
+            name: 'Услуги',
+            href: '/services'
+        },
+        {
+            name: 'Контакты',
+            href: '/contacts'
+        }
     ];
 
     return (
@@ -24,12 +33,12 @@ export default function CustomNavbar() {
             </Navbar.Brand>
             <Navbar.Content
                 enableCursorHighlight
-                activeColor="secondary"
+        
                 hideIn="xs"
                 variant="highlight-rounded"
             >
                 {collapseItems.map((x, index) => (
-                    <Navbar.Link href="#" key={index}>{x}</Navbar.Link>
+                    <Navbar.Link href={x.href} key={index}>{x.name}</Navbar.Link>
                 ))}
             </Navbar.Content>
             <Navbar.Content
@@ -40,23 +49,25 @@ export default function CustomNavbar() {
                     },
                 }}
             >
-                <Button auto>
+                <Link href="/application">
+                <Button auto flat>
                     Оставить заявку
                 </Button>
+                </Link>
             </Navbar.Content>
             <Navbar.Collapse>
                 {collapseItems.map((item, index) => (
                     <Navbar.CollapseItem
-                        key={item}
+                        key={index}
                     >
                         <Link
                             color="inherit"
                             css={{
                                 minWidth: "100%",
                             }}
-                            href="#"
+                            href={item.href}
                         >
-                            {item}
+                            {item.name}
                         </Link>
                     </Navbar.CollapseItem>
                 ))}

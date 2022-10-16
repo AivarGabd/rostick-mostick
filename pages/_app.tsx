@@ -4,20 +4,20 @@ import '../styles/globals.css'
 import Layout from '../components/layout';
 
 const theme = createTheme({
-  type: "light", // it could be "light" or "dark"
+  type: "light",
   theme: {
     colors: {
       bg: '#f8f4ee',
-      primaryLight: '$yellow200',
-      primaryLightHover: '$yellow300',
-      primaryLightActive: '$yellow400',
-      primaryLightContrast: '$yellow600',
-      primary: '#4ADE7B',
-      primaryBorder: '$yellow500',
-      primaryBorderHover: '$yellow600',
-      primarySolidHover: '$yellow700',
-      primarySolidContrast: '$white',
-      primaryShadow: '$yellow500',
+      primaryLight: '$red200',
+      primaryLightHover: '$red300',
+      primaryLightActive: '$red400',
+      primaryLightContrast: '$red600',
+      primary: '#FF1C1C',
+      primaryBorder: '$red500',
+      primaryBorderHover: '$red600',
+      primarySolidHover: '$red700',
+      primarySolidContrast: '$whitesmoke',
+      primaryShadow: '$red500',
     },
     space: {},
     fonts: {}
@@ -27,7 +27,7 @@ const theme = createTheme({
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <NextUIProvider>
+    <NextUIProvider theme={theme}>
       <Layout>
         <Component {...pageProps} />
       </Layout>

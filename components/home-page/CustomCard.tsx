@@ -9,14 +9,14 @@ const CustomCard = ({ data }: any) => (
       position: "absolute",
       zIndex: 1,
       top: 0,
-      mt: '-5px',
+      mt: '-7px',
       bgBlur: "#0f111466",
       pb:'-10px'
     }}>
 
 
       <Text h3 color='whitesmoke' css={{
-        marginBlockEnd:"0 "
+        marginBlockEnd:"-5px"
       }}>
         {data.value}
       </Text>
