@@ -62,7 +62,9 @@ const Application: NextPage = () => {
                     </Col>
 
                 </Card.Header>
-                <Card.Body>
+                <Card.Body css={{
+                    pt:'0'
+                }}>
                     <Input
                         {...bindings}
                         clearable
@@ -73,7 +75,7 @@ const Application: NextPage = () => {
                         helperColor={helper.color}
                         type="email"
                         label="Email"
-                        css={{ w: '250px' }}
+                        css={{ w: '250px',mt:'10px' }}
                     />
                     <Input
                         labelLeft="+"
@@ -86,10 +88,13 @@ const Application: NextPage = () => {
                         helperColor={phoneHelper.color}
                         label="Номер телефона"
                         onChange={setPhoneNumber}
-                        css={{ w: '250px' }}
+                        css={{ w: '250px',mt:'10px' }}
                     />
 
                     <Textarea
+                    css={{
+                        mt:'10px'
+                    }}
                         label="Комментарий или вопрос"
                     />
 
