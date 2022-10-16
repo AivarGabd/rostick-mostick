@@ -3,14 +3,17 @@ import { FaFire, FaRoad } from 'react-icons/fa'
 import { GiOilDrum, GiGears, GiCommercialAirplane } from 'react-icons/gi'
 import { RiGasStationFill } from 'react-icons/ri'
 import { BiNetworkChart } from 'react-icons/bi'
-import { Grid } from '@nextui-org/react'
+import { Card, Col, Grid, Text, Image } from '@nextui-org/react'
 import CustomCard from '../components/home-page/CustomCard'
+import Twemoji from '../components/home-page/Twemoji'
+
+
 
 const Home: NextPage = () => {
 
   const stats = [
     {
-      valueColor:'whitesmoke',
+      valueColor: 'whitesmoke',
       value: 'ДТ',
       icon: <FaFire size={45} />,
       description: 'Оптовые поставки дизельного топлива от ведущих российских производителей',
@@ -18,7 +21,7 @@ const Home: NextPage = () => {
       list: ['ДТ Летнее', 'ДТ Зимнее', 'ДТ Арктическое']
     },
     {
-      valueColor:'whitesmoke',
+      valueColor: 'whitesmoke',
       value: 'СУГ',
       icon: <FaFire size={45} />,
       description: 'Сжижженый Углеводородный газ',
@@ -26,7 +29,7 @@ const Home: NextPage = () => {
       list: ['Пропан', 'Пропан-Бутан', 'Бутан']
     },
     {
-      valueColor:'whitesmoke',
+      valueColor: 'whitesmoke',
       value: 'Автобензин',
       icon: <RiGasStationFill size={45} />,
       description: 'Оптовые поставки от ведущих производителей',
@@ -34,7 +37,7 @@ const Home: NextPage = () => {
       list: ['АИ-92', 'АИ-95', 'АИ-98', 'АИ-100']
     },
     {
-      valueColor:'whitesmoke',
+      valueColor: 'whitesmoke',
       value: 'Авиационное топливо',
       icon: <GiCommercialAirplane size={45} />,
       description: 'Оптовые поставки авиационного топлива ТС и РТ от крупнейших НПЗ.',
@@ -42,7 +45,7 @@ const Home: NextPage = () => {
       list: ['TC-1', 'PT', 'AVGAS']
     },
     {
-      valueColor:'whitesmoke',
+      valueColor: 'whitesmoke',
       value: 'Масла',
       icon: <GiGears size={45} />,
       description: 'Смазочные масла всех видов - в цистернах и бочках',
@@ -50,7 +53,7 @@ const Home: NextPage = () => {
       list: []
     },
     {
-      valueColor:'whitesmoke',
+      valueColor: 'whitesmoke',
       value: 'Полимеры',
       icon: <BiNetworkChart size={45} />,
       description: 'Вспенивающийся полистирол, ПВД',
@@ -58,7 +61,7 @@ const Home: NextPage = () => {
       list: ['ПСВ', 'ПВД']
     },
     {
-      valueColor:'whitesmoke',
+      valueColor: 'whitesmoke',
       value: 'Битум',
       icon: <FaRoad size={45} />,
       description: 'Строительный и дорожный с доставкой',
@@ -66,7 +69,7 @@ const Home: NextPage = () => {
       list: ['Битум дорожный', 'Битум строительный']
     },
     {
-      valueColor:'whitesmoke',
+      valueColor: 'whitesmoke',
       value: 'Мазут',
       icon: <GiOilDrum size={45} />,
       description: 'Топочный мазут напрямую с заводов производителей',
@@ -75,16 +78,58 @@ const Home: NextPage = () => {
     }
   ]
 
+
+  const countries = [
+    '1f1f7-1f1fa',
+    '1f1e6-1f1ff',
+    '1f1e6-1f1f2',
+    '1f1e7-1f1fe',
+    '1f1f0-1f1ff',
+    '1f1f0-1f1ec',
+    '1f1f9-1f1ef',
+    '1f1fa-1f1ff',
+    '1f1fa-1f1e6'
+  ]
+
   return (
-    <div>
+    <Col css={{ pb: '50px' }}>
       <Grid.Container gap={2} justify="center">
-        {stats.map((x,index) => (
+        {stats.map((x, index) => (
           <Grid key={index}>
             <CustomCard data={x} />
           </Grid>
         ))}
       </Grid.Container>
-    </div>
+
+      <Grid.Container>
+        <Grid css={{
+          width: "400px"
+        }}>
+          <Text size={20}>
+            Наша компания занимается поставками нефтепродуктов по всей России и страны снг.
+          </Text>
+        </Grid>
+        <Grid>
+          <Card variant='bordered' css={{
+            mw:'420px'
+          }}>
+            <Grid.Container>
+              {countries.map((x, index) => (
+                <Grid key={index}>
+                  <Image
+                    src={`https://twitter.github.io/twemoji/v/13.1.0/svg/${x}.svg`}
+                    height={60}
+                    width={100}
+                    showSkeleton
+                  />
+                </Grid>
+              ))}
+            </Grid.Container>
+          </Card>
+        </Grid>
+      </Grid.Container>
+
+    </Col>
   )
 }
 

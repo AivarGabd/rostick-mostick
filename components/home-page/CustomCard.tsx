@@ -11,12 +11,12 @@ const CustomCard = ({ data }: any) => (
       top: 0,
       mt: '-7px',
       bgBlur: "#0f111466",
-      pb:'-10px'
+      pb: '-10px'
     }}>
 
 
       <Text h3 color='whitesmoke' css={{
-        marginBlockEnd:"-5px"
+        marginBlockEnd: "-5px"
       }}>
         {data.value}
       </Text>
@@ -49,7 +49,7 @@ const CustomCard = ({ data }: any) => (
         <Text size={13} b color="whitesmoke">
           {data.description}
         </Text>
-        <Grid.Container>
+        <Grid.Container css={{ mt: '5px' }}>
           {data.list.map((x: String, index: any) => (
             <Grid css={{ p: '5px' }} key={index}><Badge>{x}</Badge></Grid>
           ))}
