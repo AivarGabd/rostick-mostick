@@ -8,9 +8,11 @@ import CustomCard from '../components/home-page/CustomCard'
 import Twemoji from '../components/home-page/Twemoji'
 import { useMediaQuery } from '../public/useMediaQuery'
 import Link from 'next/link'
-
+import { useRouter } from 'next/router'
 
 const Home: NextPage = () => {
+
+  const router = useRouter()
 
   const stats = [
     {
@@ -79,7 +81,6 @@ const Home: NextPage = () => {
     }
   ]
 
-
   const countries = [
     '1f1f7-1f1fa',
     '1f1e6-1f1ff',
@@ -91,6 +92,9 @@ const Home: NextPage = () => {
     '1f1fa-1f1ff'
   ]
 
+  const handleLinkClick = ()=>{
+    router.push('/application')
+  }
 
   const isMd = useMediaQuery(960);
 
@@ -102,7 +106,7 @@ const Home: NextPage = () => {
           isPressable
           isHoverable
           css={{
-            w: isMd?'400px':'fit-content',
+            w: isMd ? '400px' : 'fit-content',
             margin: 'auto'
           }}>
           <Card.Body>
@@ -113,15 +117,12 @@ const Home: NextPage = () => {
                 <Text h3>Наша компания:</Text>
                 <article>
                   <p>
-                  «Компания»(название придумаем новое)Готова предложить полный перечень услуг которые помогут приобретать нефтепродукты на наиболее выгодных условиях. 
-                  Наша компания избавит вас от всех проблемы которые могут возникнуть при заключение сделок а так же расходов при самостоятельной регистрации на бирже.
+                    «Компания»(название придумаем новое)Готова предложить полный перечень услуг которые помогут приобретать нефтепродукты на наиболее выгодных условиях.
+                    Наша компания избавит вас от всех проблемы которые могут возникнуть при заключение сделок а так же расходов при самостоятельной регистрации на бирже.
                   </p>
                   <Spacer x={2} />
                   <p>Тесно работая с добывающими и нефтеперерабатывающими компаниями мы сможем предложит вам лучшие цены.</p>
                 </article>
-
-
-
               </Grid>
               <Spacer x={2} />
               <Grid>
@@ -142,40 +143,56 @@ const Home: NextPage = () => {
           </Card.Footer>
         </Card>
       </Link>
-      <Card variant='bordered' css={{
-        width: isMd?'400px':'500px',
+
+
+      <Card css={{
+        w: isMd ? '400px' : 'fit-content',
         margin: '20px auto'
       }}>
         <Card.Body css={{
           pb: '0px'
         }}>
-
-          <article>
-            <p>Наша компания занимается поставками нефтепродуктов по всей России и страны снг</p>
+          <Grid.Container>
+            <Grid css={{
+              maxWidth: '400px'
+            }}>
+              <Grid.Container css={{
+                mt: '0px'
+              }}>
+                {countries.map((x, index) => (
+                  <Grid key={index} css={{ m: '5px' }}>
+                    <Image
+                      src={`https://twitter.github.io/twemoji/v/13.1.0/svg/${x}.svg`}
+                      height={80}
+                      width={'auto'}
+                      showSkeleton
+                    />
+                  </Grid>
+                ))}
+              </Grid.Container>
+            </Grid>
             <Spacer x={2} />
-            <p>Мы обеспечиваем самые разные предприятия и организации энергоресурсами высокого качества, характеристики которых полностью соответствуют требованиям ГОСТ.</p>
-          </article>
-          <Grid.Container css={{
-            mt: '0px'
-          }}>
-            {countries.map((x, index) => (
-              <Grid key={index} css={{ m: '5px' }}>
-                <Image
-                  src={`https://twitter.github.io/twemoji/v/13.1.0/svg/${x}.svg`}
-                  height={50}
-                  width={'auto'}
-                  showSkeleton
-                />
-              </Grid>
-            ))}
+            <Grid css={{
+              maxW: '400px'
+            }}>
+              <article>
+                <p>Наша компания занимается поставками нефтепродуктов по всей России и страны снг</p>
+                <Spacer x={1} />
+                <p>Мы обеспечиваем самые разные предприятия и организации энергоресурсами высокого качества, характеристики которых полностью соответствуют требованиям ГОСТ.</p>
+              </article>
+            </Grid>
           </Grid.Container>
+
+
         </Card.Body>
-        <Card.Footer>
-          <Link href="/application">
-            <Button auto flat>
+        <Card.Footer css={{
+          flexDirection: 'row-reverse'
+        }}>
+          <div>
+            <Button auto flat onClick={handleLinkClick}>
               Оставить заявку
             </Button>
-          </Link>
+          </div>
         </Card.Footer>
       </Card>
 

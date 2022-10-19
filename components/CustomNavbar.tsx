@@ -1,4 +1,6 @@
 import { Button, Dropdown, Link, Navbar, Text } from "@nextui-org/react";
+import { useRouter } from 'next/router'
+
 
 export default function CustomNavbar() {
     const collapseItems = [
@@ -19,6 +21,9 @@ export default function CustomNavbar() {
             href: '/contacts'
         }
     ];
+    const router = useRouter()
+
+
 
     return (
         <Navbar variant="floating" css={{
@@ -44,7 +49,7 @@ export default function CustomNavbar() {
                 variant="highlight-rounded"
             >
                 {collapseItems.map((x, index) => (
-                    <Navbar.Link href={x.href} key={index}>{x.name}</Navbar.Link>
+                    <Navbar.Link href={x.href} key={index} isActive={router.pathname == x.href}>{x.name}</Navbar.Link>
                 ))}
             </Navbar.Content>
             <Navbar.Content
