@@ -3,10 +3,11 @@ import { FaFire, FaRoad } from 'react-icons/fa'
 import { GiOilDrum, GiGears, GiCommercialAirplane } from 'react-icons/gi'
 import { RiGasStationFill } from 'react-icons/ri'
 import { BiNetworkChart } from 'react-icons/bi'
-import { Card, Col, Grid, Text, Image } from '@nextui-org/react'
+import { Card, Col, Grid, Text, Image, Spacer, Button } from '@nextui-org/react'
 import CustomCard from '../components/home-page/CustomCard'
 import Twemoji from '../components/home-page/Twemoji'
-
+import { useMediaQuery } from '../public/useMediaQuery'
+import Link from 'next/link'
 
 
 const Home: NextPage = () => {
@@ -87,12 +88,97 @@ const Home: NextPage = () => {
     '1f1f0-1f1ff',
     '1f1f0-1f1ec',
     '1f1f9-1f1ef',
-    '1f1fa-1f1ff',
-    '1f1fa-1f1e6'
+    '1f1fa-1f1ff'
   ]
 
+
+  const isMd = useMediaQuery(960);
+
   return (
-    <Col css={{ pb: '50px' }}>
+    <Col css={{ pb: '50px', mt: '20px' }}>
+
+      <Link href="/about">
+        <Card
+          isPressable
+          isHoverable
+          css={{
+            w: isMd?'400px':'fit-content',
+            margin: 'auto'
+          }}>
+          <Card.Body>
+            <Grid.Container>
+              <Grid css={{
+                maxWidth: '400px'
+              }}>
+                <Text h3>Наша компания:</Text>
+                <article>
+                  <p>
+                  «Компания»(название придумаем новое)Готова предложить полный перечень услуг которые помогут приобретать нефтепродукты на наиболее выгодных условиях. 
+                  Наша компания избавит вас от всех проблемы которые могут возникнуть при заключение сделок а так же расходов при самостоятельной регистрации на бирже.
+                  </p>
+                  <Spacer x={2} />
+                  <p>Тесно работая с добывающими и нефтеперерабатывающими компаниями мы сможем предложит вам лучшие цены.</p>
+                </article>
+
+
+
+              </Grid>
+              <Spacer x={2} />
+              <Grid>
+                <Image
+                  src={`http://rupec.ru/upload/iblock/950/9500a19aaa6caee05f198a3d6b2c103c.jpg`}
+                  height={'auto'}
+                  width={isMd ? '100%' : 500}
+                  showSkeleton
+                  css={{
+                    borderRadius: '15px'
+                  }}
+                />
+              </Grid>
+            </Grid.Container>
+          </Card.Body>
+          <Card.Footer>
+
+          </Card.Footer>
+        </Card>
+      </Link>
+      <Card variant='bordered' css={{
+        width: isMd?'400px':'500px',
+        margin: '20px auto'
+      }}>
+        <Card.Body css={{
+          pb: '0px'
+        }}>
+
+          <article>
+            <p>Наша компания занимается поставками нефтепродуктов по всей России и страны снг</p>
+            <Spacer x={2} />
+            <p>Мы обеспечиваем самые разные предприятия и организации энергоресурсами высокого качества, характеристики которых полностью соответствуют требованиям ГОСТ.</p>
+          </article>
+          <Grid.Container css={{
+            mt: '0px'
+          }}>
+            {countries.map((x, index) => (
+              <Grid key={index} css={{ m: '5px' }}>
+                <Image
+                  src={`https://twitter.github.io/twemoji/v/13.1.0/svg/${x}.svg`}
+                  height={50}
+                  width={'auto'}
+                  showSkeleton
+                />
+              </Grid>
+            ))}
+          </Grid.Container>
+        </Card.Body>
+        <Card.Footer>
+          <Link href="/application">
+            <Button auto flat>
+              Оставить заявку
+            </Button>
+          </Link>
+        </Card.Footer>
+      </Card>
+
       <Grid.Container gap={2} justify="center">
         {stats.map((x, index) => (
           <Grid key={index}>
@@ -100,35 +186,6 @@ const Home: NextPage = () => {
           </Grid>
         ))}
       </Grid.Container>
-
-      <Grid.Container>
-        <Grid css={{
-          width: "400px"
-        }}>
-          <Text size={20}>
-            Наша компания занимается поставками нефтепродуктов по всей России и страны снг.
-          </Text>
-        </Grid>
-        <Grid>
-          <Card variant='bordered' css={{
-            mw:'420px'
-          }}>
-            <Grid.Container>
-              {countries.map((x, index) => (
-                <Grid key={index}>
-                  <Image
-                    src={`https://twitter.github.io/twemoji/v/13.1.0/svg/${x}.svg`}
-                    height={60}
-                    width={100}
-                    showSkeleton
-                  />
-                </Grid>
-              ))}
-            </Grid.Container>
-          </Card>
-        </Grid>
-      </Grid.Container>
-
     </Col>
   )
 }

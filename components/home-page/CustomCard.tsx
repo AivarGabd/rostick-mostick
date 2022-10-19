@@ -31,27 +31,25 @@ const CustomCard = ({ data }: any) => (
         src={data.src}
         objectFit="cover"
         width="100%"
-        height={500}
+        height={400}
         alt={data.description}
       />
     </div>
     <Card.Footer
       isBlurred
       css={{
-        position: "absolute",
-        bgBlur: "#0f111466",
-        borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
+        bg:'whitesmoke',
         bottom: 0,
         zIndex: 1,
       }}
     >
       <Col>
-        <Text size={13} b color="whitesmoke">
-          {data.description}
+        <Text size={13} b >
+          <article>{data.description}</article>
         </Text>
         <Grid.Container css={{ mt: '5px' }}>
           {data.list.map((x: String, index: any) => (
-            <Grid css={{ p: '5px' }} key={index}><Badge>{x}</Badge></Grid>
+            <Grid css={{ p: '0px' }} key={index}><Badge>{x}</Badge></Grid>
           ))}
         </Grid.Container>
       </Col>

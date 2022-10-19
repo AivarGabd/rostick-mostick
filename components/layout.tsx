@@ -9,6 +9,9 @@ export default function Layout({ children }: any) {
     return <>
        <CustomNavbar />
         <Container
+        css={{
+            mt:'100px'
+        }}
             gap={0}
             lg>
                     

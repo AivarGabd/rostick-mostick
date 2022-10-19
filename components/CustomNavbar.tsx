@@ -11,13 +11,19 @@ export default function CustomNavbar() {
             href: '/services'
         },
         {
+            name: 'О компании',
+            href: '/about'
+        },
+        {
             name: 'Контакты',
             href: '/contacts'
         }
     ];
 
     return (
-        <Navbar variant="floating">
+        <Navbar variant="floating" css={{
+            position: 'fixed'
+        }}>
             <Navbar.Toggle showIn="xs" />
             <Navbar.Brand
                 css={{
@@ -33,7 +39,7 @@ export default function CustomNavbar() {
             </Navbar.Brand>
             <Navbar.Content
                 enableCursorHighlight
-        
+
                 hideIn="xs"
                 variant="highlight-rounded"
             >
@@ -50,9 +56,9 @@ export default function CustomNavbar() {
                 }}
             >
                 <Link href="/application">
-                <Button auto flat>
-                    Оставить заявку
-                </Button>
+                    <Button auto flat>
+                        Оставить заявку
+                    </Button>
                 </Link>
             </Navbar.Content>
             <Navbar.Collapse>
