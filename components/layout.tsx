@@ -1,21 +1,24 @@
 import { Container } from "@nextui-org/react";
 import CustomNavbar from "./CustomNavbar";
+import Footer from "./Footer";
 
 
 export default function Layout({ children }: any) {
 
 
-    
+
     return <>
-       <CustomNavbar />
+        <CustomNavbar />
         <Container
-        css={{
-            mt:'100px'
-        }}
+            css={{
+                mt: '100px'
+            }}
             gap={0}
             lg>
-                    
-            {children}
+            <div>
+                {children}
+            </div>
+            <Footer />
         </Container>
     </>
 }

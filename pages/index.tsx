@@ -3,7 +3,7 @@ import { FaFire, FaRoad } from 'react-icons/fa'
 import { GiOilDrum, GiGears, GiCommercialAirplane } from 'react-icons/gi'
 import { RiGasStationFill } from 'react-icons/ri'
 import { BiNetworkChart } from 'react-icons/bi'
-import { Card, Col, Grid, Text, Image, Spacer, Button } from '@nextui-org/react'
+import { Card, Col, Grid, Text, Image, Spacer, Button, Container } from '@nextui-org/react'
 import CustomCard from '../components/home-page/CustomCard'
 import Twemoji from '../components/home-page/Twemoji'
 import { useMediaQuery } from '../public/useMediaQuery'
@@ -99,7 +99,7 @@ const Home: NextPage = () => {
   const isMd = useMediaQuery(960);
 
   return (
-    <Col css={{ pb: '50px', mt: '20px' }}>
+    <Container css={{ pb: '50px', mt: '20px' }}>
 
       <Link href="/about">
         <Card
@@ -203,7 +203,7 @@ const Home: NextPage = () => {
           </Grid>
         ))}
       </Grid.Container>
-    </Col>
+    </Container>
   )
 }
 
