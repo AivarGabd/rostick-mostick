@@ -15,10 +15,6 @@ export default function CustomNavbar() {
         {
             name: 'О компании',
             href: '/about'
-        },
-        {
-            name: 'Контакты',
-            href: '/contacts'
         }
     ];
     const router = useRouter()
