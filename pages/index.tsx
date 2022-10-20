@@ -92,7 +92,33 @@ const Home: NextPage = () => {
     '1f1fa-1f1ff'
   ]
 
-  const handleLinkClick = ()=>{
+  const partners = [
+    'https://solid-sibir.ru/img/home/partners/partners-1.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-2.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-3.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-4.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-5.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-6.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-7.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-8.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-9.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-10.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-11.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-12.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-13.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-14.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-15.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-16.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-17.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-18.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-19.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-20.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-21.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-22.jpg?_v=1634118736682',
+    'https://solid-sibir.ru/img/home/partners/partners-23.jpg?_v=1634118736682'
+  ]
+
+  const handleLinkClick = () => {
     router.push('/application')
   }
 
@@ -194,6 +220,20 @@ const Home: NextPage = () => {
             </Button>
           </div>
         </Card.Footer>
+      </Card>
+      <Card>
+        <Grid.Container>
+          {partners.map((x,index) => (
+            <Grid key={index}>
+              <Image
+                src={x}
+                height={100}
+                width={'auto'}
+                showSkeleton
+              />
+            </Grid>
+          ))}
+        </Grid.Container>
       </Card>
 
       <Grid.Container gap={2} justify="center">
