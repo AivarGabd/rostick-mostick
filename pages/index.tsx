@@ -223,7 +223,7 @@ const Home: NextPage = () => {
       </Card>
       <Card>
         <Grid.Container>
-          {partners.map((x,index) => (
+          {partners.map((x, index) => (
             <Grid key={index}>
               <Image
                 src={x}
