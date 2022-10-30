@@ -13,14 +13,14 @@ const Footer = () => (
                         <Text h4>Контакты</Text>
                     </div>
                     <div>
-                        89961007863
+                        +7 (347) 472-36-36
                     </div>
                     <div>
                         igor.company.neft@gmail.ru
                     </div>
                 </div>
             </Grid>
-            <Spacer y={1} x={2}/>
+            <Spacer y={1} x={2} />
             <Grid>
                 <div>
                     <Text h4>Адрес</Text>
@@ -31,9 +31,9 @@ const Footer = () => (
             </Grid>
         </Grid.Container>
         <Spacer y={1} />
-                <div>
-                    © ООО Игорь и Компания(потом новое)
-                </div>
+        <div>
+            © ООО Игорь и Компания
+        </div>
     </Container>
 )
 

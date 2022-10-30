@@ -23,7 +23,7 @@ const About: NextPage = () => (
             </tr>
             <tr>
                 <td>Тел</td>
-                <td>89961007863</td>
+                <td>+7 (347) 472-36-36</td>
             </tr>
             <tr>
                 <td>ОГРН</td>
