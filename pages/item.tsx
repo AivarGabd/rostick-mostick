@@ -7,11 +7,12 @@ import { GiOilDrum, GiGears, GiCommercialAirplane } from 'react-icons/gi'
 import { RiGasStationFill } from 'react-icons/ri'
 import { BiNetworkChart } from 'react-icons/bi'
 import CustomCard from '../components/home-page/CustomCard';
+import { useMediaQuery } from '../public/useMediaQuery';
 
 
 
 const Item: NextPage = ({ data }: any) => {
-
+    const isMd = useMediaQuery(960);
 
 
 
@@ -19,7 +20,8 @@ const Item: NextPage = ({ data }: any) => {
 
         return (
             <div style={{
-                paddingBottom: '100px'
+                paddingBottom: '100px',
+                margin:'10px'
             }}>
                 <Text h2>
                     {data.mainHeader}
@@ -30,7 +32,7 @@ const Item: NextPage = ({ data }: any) => {
                     }}>
                         <Text h3>{item.header}</Text>
                         <article style={{
-                            width: '700px'
+                            width: isMd ? '100%' : '700px'
                         }}>
                             {item.text}
                         </article>
