@@ -200,7 +200,7 @@ const Home: NextPage = () => {
             w: isMd ? '400px' : 'fit-content',
             margin: 'auto'
           }}>
-        <CustomSwiperPartners/>
+        <CustomSwiperPartners isMd={isMd}/>
       </Card>
 
       <Grid.Container gap={2} justify="center">

@@ -6,7 +6,7 @@ import "swiper/css/grid";
 import "swiper/css/pagination";
 
 
-export default function CustomSwiperPartners() {
+export default function App({ isMd }: any) {
     const partners = [
         'https://solid-sibir.ru/img/home/partners/partners-1.jpg?_v=1634118736682',
         'https://solid-sibir.ru/img/home/partners/partners-2.jpg?_v=1634118736682',
@@ -36,7 +36,7 @@ export default function CustomSwiperPartners() {
     return (
         <>
             <Swiper
-                slidesPerView={3}
+                slidesPerView={isMd ? 3 : 8}
                 grid={{
                     rows: 2,
                 }}
