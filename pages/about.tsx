@@ -38,8 +38,8 @@ const About: NextPage = () => (
                 <td>94262640</td>
             </tr>
             <tr>
-                <td>ОКВЭД (вид деятельности)</td>
-                <td>52.11.2</td>
+                <td>Дата внесения в ЕГРЮЛ</td>
+                <td>2006</td>
             </tr>
         </table>
         <YMaps>

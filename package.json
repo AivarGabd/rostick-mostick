@@ -16,6 +16,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
     "react-phone-number-input": "^3.2.11",
+    "swiper": "^8.4.4",
     "twemoji": "^14.0.2"
   },
   "devDependencies": {

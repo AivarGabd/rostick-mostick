@@ -1,4 +1,9 @@
 import { Badge, Button, Card, Col, Grid, Row, Text } from "@nextui-org/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper";
+
 
 const CustomCard = ({ data }: any) => (
   <Card isPressable isHoverable css={{
@@ -41,6 +46,7 @@ const CustomCard = ({ data }: any) => (
         bg:'whitesmoke',
         bottom: 0,
         zIndex: 1,
+        height:'120px'
       }}
     >
       <Col>

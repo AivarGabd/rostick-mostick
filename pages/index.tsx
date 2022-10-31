@@ -9,6 +9,7 @@ import Twemoji from '../components/home-page/Twemoji'
 import { useMediaQuery } from '../public/useMediaQuery'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import CustomSwiperPartners from '../components/home-page/CustomSwiperPartners'
 
 const Home: NextPage = () => {
 
@@ -92,31 +93,6 @@ const Home: NextPage = () => {
     '1f1fa-1f1ff'
   ]
 
-  const partners = [
-    'https://solid-sibir.ru/img/home/partners/partners-1.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-2.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-3.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-4.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-5.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-6.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-7.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-8.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-9.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-10.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-11.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-12.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-13.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-14.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-15.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-16.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-17.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-18.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-19.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-20.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-21.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-22.jpg?_v=1634118736682',
-    'https://solid-sibir.ru/img/home/partners/partners-23.jpg?_v=1634118736682'
-  ]
 
   const handleLinkClick = () => {
     router.push('/application')
@@ -143,10 +119,9 @@ const Home: NextPage = () => {
                 <Text h3>Наша компания:</Text>
                 <article>
                   <p>
-                    «Компания»(название придумаем новое)Готова предложить полный перечень услуг которые помогут приобретать нефтепродукты на наиболее выгодных условиях.
-                    Наша компания избавит вас от всех проблемы которые могут возникнуть при заключение сделок а так же расходов при самостоятельной регистрации на бирже.
+                    «Компания»(название придумаем новое) Готова предложить полный перечень услуг которые помогут приобретать нефтепродукты на наиболее выгодных условиях.
                   </p>
-                  <Spacer x={2} />
+                  <Spacer y={3} />
                   <p>Тесно работая с добывающими и нефтеперерабатывающими компаниями мы сможем предложит вам лучшие цены.</p>
                 </article>
               </Grid>
@@ -221,19 +196,8 @@ const Home: NextPage = () => {
           </div>
         </Card.Footer>
       </Card>
-      <Card>
-        <Grid.Container>
-          {partners.map((x, index) => (
-            <Grid key={index}>
-              <Image
-                src={x}
-                height={100}
-                width={'auto'}
-                showSkeleton
-              />
-            </Grid>
-          ))}
-        </Grid.Container>
+      <Card variant='flat'>
+        <CustomSwiperPartners/>
       </Card>
 
       <Grid.Container gap={2} justify="center">
