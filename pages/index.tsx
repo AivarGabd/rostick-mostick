@@ -108,7 +108,7 @@ const Home: NextPage = () => {
           isPressable
           isHoverable
           css={{
-            w: isMd ? '400px' : 'fit-content',
+            w: isMd ? '400px' : '1000px',
             margin: 'auto'
           }}>
           <Card.Body>
@@ -130,7 +130,7 @@ const Home: NextPage = () => {
                 <Image
                   src={`http://rupec.ru/upload/iblock/950/9500a19aaa6caee05f198a3d6b2c103c.jpg`}
                   height={'auto'}
-                  width={isMd ? '100%' : 500}
+                  width={isMd ? '100%' : 530}
                   showSkeleton
                   css={{
                     borderRadius: '15px'
@@ -147,7 +147,7 @@ const Home: NextPage = () => {
 
 
       <Card css={{
-        w: isMd ? '400px' : 'fit-content',
+        w: isMd ? '400px' : '1000px',
         margin: '20px auto'
       }}>
         <Card.Body css={{
@@ -197,7 +197,7 @@ const Home: NextPage = () => {
         </Card.Footer>
       </Card>
       <Card variant='flat' css={{
-            w: isMd ? '400px' : 'fit-content',
+            w: isMd ? '400px' : '1000px',
             margin: 'auto'
           }}>
         <CustomSwiperPartners isMd={isMd}/>

@@ -13,6 +13,7 @@ const Footer = () => (
                         <Text h4>Контакты</Text>
                     </div>
                     <div>
+                        +7 (996) 100 78 63<br />
                         +7 (347) 472-36-36
                     </div>
                     <div>
