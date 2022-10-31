@@ -196,7 +196,10 @@ const Home: NextPage = () => {
           </div>
         </Card.Footer>
       </Card>
-      <Card variant='flat'>
+      <Card variant='flat' css={{
+            w: isMd ? '400px' : 'fit-content',
+            margin: 'auto'
+          }}>
         <CustomSwiperPartners/>
       </Card>
 
