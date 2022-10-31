@@ -7,12 +7,14 @@ import { GiOilDrum, GiGears, GiCommercialAirplane } from 'react-icons/gi'
 import { RiGasStationFill } from 'react-icons/ri'
 import { BiNetworkChart } from 'react-icons/bi'
 import CustomCard from '../components/home-page/CustomCard';
+import testData from '../public/data/test.json'
 
 const Item: NextPage = ({ data }: any) => {
 
 
 
-    if (data) {
+    
+    if (false && data) {
 
         return (
             <div style={{
@@ -52,7 +54,7 @@ const Item: NextPage = ({ data }: any) => {
             alignItems: 'center',
             justifyContent: 'center'
         }}>
-            <Loading size='xl' />
+            {testData.test}
         </div>
     )
 }
