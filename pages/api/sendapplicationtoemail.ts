@@ -40,7 +40,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         if (error) {
             console.log(error);
         } else {
-            console.log('Email sent: ' + info.response);
+            res.status(201).json(JSON.stringify(true));
         }
     });
   
