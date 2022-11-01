@@ -13,11 +13,11 @@ const CustomCard = ({ data }: any) => {
   }
 
   return (
-    <Card isPressable isHoverable 
-    onClick={handleLinkClick}
-    css={{
-      mw: '300px',
-    }}>
+    <Card isPressable isHoverable
+      onClick={handleLinkClick}
+      css={{
+        mw: '300px',
+      }}>
       <Card.Header css={{
         position: "absolute",
         zIndex: 1,

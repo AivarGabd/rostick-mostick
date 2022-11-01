@@ -18,7 +18,9 @@
     "react-icons": "^4.6.0",
     "react-phone-number-input": "^3.2.11",
     "swiper": "^8.4.4",
-    "twemoji": "^14.0.2"
+    "twemoji": "^14.0.2",
+    "@types/nodemailer": "^6.4.6",
+    "nodemailer": "^6.8.0"
   },
   "devDependencies": {
     "@types/node": "18.8.5",

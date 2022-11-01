@@ -2,11 +2,39 @@ import { Card, Textarea, useInput, Text, Col, Input, Button } from '@nextui-org/
 import type { NextPage } from 'next'
 import { useMemo, useState } from 'react';
 import { isValidPhoneNumber } from 'react-phone-number-input'
+import { useMediaQuery } from '../public/useMediaQuery';
 
 
 const Application: NextPage = () => {
+    const isMd = useMediaQuery(960);
+
     const { value, reset, bindings } = useInput("");
     const [phoneNumber, setPhoneNumber] = useState<any>(null)
+    const [comment, setComment] = useState('')
+
+
+    const handleSubmit = () => {
+
+        fetch('/api/sendapplicationtoemail', {
+            method: "POST",
+            body: JSON.stringify({
+                email: value,
+                phoneNumber: `+${phoneNumber.target.value}`,
+                comment: comment
+            }),
+            headers:
+            {
+                "Content-Type":
+                    "application/json",
+            },
+        })
+    }
+
+
+    const handleChange = (e: any) => {
+        setComment(e.target.value)
+    }
+
 
     const validateEmail = (value: any) => {
         return value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
@@ -42,16 +70,15 @@ const Application: NextPage = () => {
     return (
         <div style={{
             display: 'flex',
-  
             justifyContent: 'center',
             alignContent: "center",
             textAlign: 'center',
             alignItems: 'center',
         }}>
             <Card css={{
-                w: '500px',
+                w: isMd ? '100%' : '500px',
                 textAlign: 'left',
-                mt:'50px'
+                mt: '50px'
             }}>
                 <Card.Header>
                     <Col>
@@ -63,7 +90,7 @@ const Application: NextPage = () => {
 
                 </Card.Header>
                 <Card.Body css={{
-                    pt:'0'
+                    pt: '0'
                 }}>
                     <Input
                         {...bindings}
@@ -75,7 +102,7 @@ const Application: NextPage = () => {
                         helperColor={helper.color}
                         type="email"
                         label="Email"
-                        css={{ w: '250px',mt:'10px' }}
+                        css={{ w: '250px', mt: '10px' }}
                     />
                     <Input
                         labelLeft="+"
@@ -88,20 +115,22 @@ const Application: NextPage = () => {
                         helperColor={phoneHelper.color}
                         label="Номер телефона"
                         onChange={setPhoneNumber}
-                        css={{ w: '250px',mt:'10px' }}
+                        css={{ w: '250px', mt: '10px' }}
                     />
 
                     <Textarea
-                    css={{
-                        mt:'10px'
-                    }}
+                        css={{
+                            mt: '10px'
+                        }}
                         label="Комментарий или вопрос"
+                        onChange={handleChange}
                     />
 
                     <Button color='success' auto css={{
                         width: "50px",
                         mt: '20px'
                     }}
+                        onClick={handleSubmit}
                         disabled={phoneNumber == null || isValidPhoneNumber(`+${phoneNumber.target.value}`) == false || helper.isValid == null}
                     >
 
