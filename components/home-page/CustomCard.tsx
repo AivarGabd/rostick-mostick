@@ -1,69 +1,77 @@
 import { Badge, Button, Card, Col, Grid, Row, Text } from "@nextui-org/react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 
-const CustomCard = ({ data }: any) => (
-  <Link href={`/item?id=${data.value}`}>
-    <a>
-      <Card isPressable isHoverable css={{
-        mw: '300px',
+const CustomCard = ({ data }: any) => {
 
+  const router = useRouter()
+
+
+  const handleLinkClick = () => {
+    router.push(`/item?id=${data.value}`)
+  }
+
+  return (
+    <Card isPressable isHoverable 
+    onClick={handleLinkClick}
+    css={{
+      mw: '300px',
+    }}>
+      <Card.Header css={{
+        position: "absolute",
+        zIndex: 1,
+        top: 0,
+        mt: '-7px',
+        bgBlur: "#0f111466",
+        pb: '-10px'
       }}>
-        <Card.Header css={{
-          position: "absolute",
+
+
+        <Text h3 color='whitesmoke' css={{
+          marginBlockEnd: "-5px"
+        }}>
+          {data.value}
+        </Text>
+
+      </Card.Header>
+
+      <div style={{
+        //filter: 'blur(1px)'
+      }}>
+        <Card.Image
+          showSkeleton
+          src={data.src}
+          objectFit="cover"
+          width="100%"
+          height={400}
+          alt={data.description}
+        />
+      </div>
+      <Card.Footer
+        isBlurred
+        css={{
+          bg: 'whitesmoke',
+          bottom: 0,
           zIndex: 1,
-          top: 0,
-          mt: '-7px',
-          bgBlur: "#0f111466",
-          pb: '-10px'
-        }}>
-
-
-          <Text h3 color='whitesmoke' css={{
-            marginBlockEnd: "-5px"
-          }}>
-            {data.value}
+          height: '120px'
+        }}
+      >
+        <Col>
+          <Text size={13} b >
+            <article>{data.description}</article>
           </Text>
-
-        </Card.Header>
-
-        <div style={{
-          //filter: 'blur(1px)'
-        }}>
-          <Card.Image
-            showSkeleton
-            src={data.src}
-            objectFit="cover"
-            width="100%"
-            height={400}
-            alt={data.description}
-          />
-        </div>
-        <Card.Footer
-          isBlurred
-          css={{
-            bg: 'whitesmoke',
-            bottom: 0,
-            zIndex: 1,
-            height: '120px'
-          }}
-        >
-          <Col>
-            <Text size={13} b >
-              <article>{data.description}</article>
-            </Text>
-            <Grid.Container css={{ mt: '5px' }}>
-              {data.list.map((x: String, index: any) => (
-                <Grid css={{ p: '0px' }} key={index}><Badge>{x}</Badge></Grid>
-              ))}
-            </Grid.Container>
-          </Col>
+          <Grid.Container css={{ mt: '5px' }}>
+            {data.list.map((x: String, index: any) => (
+              <Grid css={{ p: '0px' }} key={index}><Badge>{x}</Badge></Grid>
+            ))}
+          </Grid.Container>
+        </Col>
 
 
-        </Card.Footer>
-      </Card>
-    </a>
-  </Link>
-);
+      </Card.Footer>
+    </Card>
+  )
+}
 
 export default CustomCard
